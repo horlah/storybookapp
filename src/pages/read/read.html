@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="overflow: hidden !important;">
+  <ion-fab top right edge>
+    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list>
+      <button ion-fab (click)="vocab()" ><ion-icon name="book"></ion-icon></button>
+      <button ion-fab (click)="playVoice()" ><ion-icon name="volume-up"></ion-icon></button>
+      <button ion-fab><ion-icon name="volume-up"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+  <ion-slides pager paginationType="fraction" (ionSlideDidChange)="slideChanged()">
+    <ion-slide>
+      <!-- <ion-toolbar>
+      </ion-toolbar> -->
+      <img src="assets/img/1.jpg" class="slide-image" />
+      <h2 class="slide-title">Spoit Brat</h2>
+      <h4>By</h4>
+      <h3>Olaide Soetan</h3><br>
+      <button ion-button large clear icon-end>
+        slide
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button><br><br>
+    </ion-slide>
+    <ion-slide *ngFor="let story of stories" style="overflow: scroll;">
+      <!-- <ion-toolbar>
+        <ion-buttons end>
+          <button ion-button color="primary">Skip</button>
+        </ion-buttons>
+      </ion-toolbar> -->
+      <img [src]="story.img" class="slide-image" />
+      <!-- <h2 class="slide-title">Try try</h2> -->
+      <p padding>{{ story.story}} <br></p>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

@@ -1,0 +1,22 @@
+<ion-content padding>
+  <div class="name" text-center>
+    <h1>Story Book</h1>
+  </div>
+  <div class="login">
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+
+    </ion-list>
+    <button class="login" ion-button full (click)="login()" >Login</button>
+    <button ion-button full clear (click)="reg()">Rgister</button>
+  </div>
+</ion-content>

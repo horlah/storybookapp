@@ -41,26 +41,30 @@ $colors: (
   dark:       #222
 );
 
+.login {
+  border-radius: 10px;
+}
+
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
-
+$popover-ios-width: 180px;
 
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
-
+$popover-md-width: 180px;
 
 
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
 
-
+$popover-wp-width: 180px;
 
 
 // App Theme

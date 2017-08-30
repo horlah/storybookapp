@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="close()" >
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Vocabularies</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card padding *ngFor="let vocab of vocabs">
+    <h2 style="font-weight: bold;">{{ vocab.word }}--</h2>
+    <p>{{ vocab.meaning }}.</p>
+  </ion-card>
+
+</ion-content>
