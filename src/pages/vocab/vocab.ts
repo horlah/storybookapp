@@ -29,9 +29,9 @@ export class VocabPage {
     ]
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad VocabPage');
-  }
+  // ionViewDidLoad() {
+  //   console.log('ionViewDidLoad VocabPage');
+  // }
 
   close() {
     this.viewCtrl.dismiss();

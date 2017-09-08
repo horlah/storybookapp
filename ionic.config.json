@@ -1,6 +1,6 @@
 {
   "name": "storybook",
-  "app_id": "",
+  "app_id": "825ecfb2",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

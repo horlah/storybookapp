@@ -16,7 +16,7 @@ export class OptPage {
   }
 
   logout() {
-    this.navCtrl.setRoot('WelcomePage');
+    this.navCtrl.push('WelcomePage');
   }
 
 }

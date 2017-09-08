@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the RegPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -18,8 +12,12 @@ export class RegPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RegPage');
+  // ionViewDidLoad() {
+  //   console.log('ionViewDidLoad RegPage');
+  // }
+
+  reg() {
+    this.navCtrl.setRoot(HomePage)
   }
 
 }
