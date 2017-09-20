@@ -14,7 +14,7 @@
       <button ion-fab (click)="playSong()"><ion-icon name="musical-notes"></ion-icon></button>
     </ion-fab-list>
   </ion-fab>
-  <ion-slides pager paginationType="fraction" (ionSlideDidChange)="slideChanged()">
+  <ion-slides pager paginationType="fraction" autoplay="10000" autoplayDisableOnInteraction="false" (ionSlideDidChange)="slideChanged()">
     <ion-slide>
       <!-- <ion-toolbar>
       </ion-toolbar> -->
@@ -22,7 +22,7 @@
         <img src="assets/img/10.jpg" class="slide-image" />
       </div>
       <div class="story">
-        <h2 class="slide-title">Spoit Brat</h2>
+        <h2 class="slide-title">Spoilt Brat</h2>
         <h4>By</h4>
         <h3>Olaide Soetan</h3><br>
         <button ion-button large clear icon-end>
@@ -42,7 +42,31 @@
       </div>
       <!-- <h2 class="slide-title">Try try</h2> -->
       <!-- <br> -->
-      <p class="story" padding>{{ story.story}} <br></p>
+      <p class="story" padding *ngIf="!story.song">{{ story.story}} <br></p>
+      <p class="story" padding *ngIf="story.song">
+         " Iya ma ra o (twice) <br><br>
+        <span style="font-weight: bold">Chorus:</span> Ra fun mi <br><br>
+         Ki se oju ewure <br><br>
+        <span style="font-weight: bold">Chorus:</span> Ra fun mi <br><br>
+         Ki se oju aguntan <br><br>
+        <span style="font-weight: bold">Chorus:</span> Ra fun mi <br><br>
+         Oju iya ti n be loja, ti n ta akara Iya ma ra o <br><br>
+        <span style="font-weight: bold">Chorus:</span> Ra fun mi "
+      </p>
+    </ion-slide>
+    <ion-slide style="overflow: scroll;">
+      <!-- <ion-toolbar>
+        <ion-buttons end>
+          <button ion-button color="primary">Skip</button>
+        </ion-buttons>
+      </ion-toolbar> -->
+      <!-- <h2 class="slide-title">Try try</h2> -->
+      <!-- <br> -->
+      <h2>Credits</h2>
+      <p class="story" padding><span style="font-weight: bold">Dedicated to</span><br> Our progenitors who sought to pass on our culture via storytelling</p>
+      <p class="story" padding><span style="font-weight: bold">Illustrator</span><br> Christian Okwananke</p>
+      <p class="story" padding><span style="font-weight: bold">Published by</span><br> Bibliographer</p>
+      <p class="story" padding><span style="font-weight: bold">Copyright</span><br> Bibliographer</p>
     </ion-slide>
   </ion-slides>
 </ion-content>

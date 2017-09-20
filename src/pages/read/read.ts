@@ -10,7 +10,7 @@ import { NativeAudio } from '@ionic-native/native-audio';
 export class ReadPage {
   @ViewChild(Slides) slides: Slides;
   title: string;
-  stories: [{ story: string, img: string, no: string }];
+  stories: [{ story: string, img: string, no: string, song: boolean }];
   voiceNo: any;
   voicePrev: any;
   voice: boolean;
@@ -36,10 +36,10 @@ export class ReadPage {
     this.nativeAudio.preloadComplex('6', 'assets/voice/6.mp3', 1, 1, 0);
     this.nativeAudio.preloadComplex('7', 'assets/voice/7.mp3', 1, 1, 0);
     this.nativeAudio.preloadComplex('8', 'assets/voice/8.mp3', 1, 1, 0);
-    this.nativeAudio.preloadComplex('9', 'assets/voice/music.mp3', 1, 1, 0);
+    this.nativeAudio.preloadComplex('9', 'assets/voice/music.mp3', 0.1, 1, 0);
     this.nativeAudio.preloadComplex('10', 'assets/voice/9.mp3', 1, 1, 0);
     this.nativeAudio.preloadComplex('11', 'assets/voice/10.mp3', 1, 1, 0);
-    this.nativeAudio.preloadComplex('music', 'assets/voice/music2.mp3', 0.4, 1, 0);
+    this.nativeAudio.preloadComplex('music', 'assets/voice/music2.mp3', 0.1, 1, 0);
 
     this.stories = [
       {
@@ -48,35 +48,39 @@ export class ReadPage {
           she decided to seek the assistance of a herbalist, babalawo. Babalawo \
           informed her that there was a shortage of good children from the gods \
           and advised her to wait till the annual traditional festival when the \
-          gods will send more children to the earth",
+          gods will send more children to the earth.",
         img: "assets/img/1.jpg", 
-        no: ""
+        no: "",
+        song: false
       },
       {
         story: "Rather than listen to the advice of the Babalawo, she pleaded \
-          with him to give her any of the available children from the gods.She felt \
+          with him to give her any of the available children from the gods. She felt \
           she was not getting any younger and she needed someone who could inherit \
           all the wealth she had worked hard to acquire.",
         img: "assets/img/2.jpg",
-        no: ""
+        no: "",
+        song: false
       },
       {
         story: "Babalawo reluctantly granted her request. He however warned her that \
-          she mustalways make the child happy and must never allow the child to shed \
+          she must always make the child happy and must never allow the child to shed \
           tears or the consequences will be very dire. Nine months down the line, \
-          Aduke gavebirth to a baby girl who she named ‘Omolabake’. Aduke made sure \
-          Omolabake did not lack for anything.She was quick to grant all requests and \
+          Aduke gave birth to a baby girl who she named ‘Omolabake’. Aduke made sure \
+          Omolabake did not lack for anything. She was quick to grant all requests and \
           nevercorrected her when she did any wrong.",
         img: "assets/img/3.jpg",
-        no: ""
+        no: "",
+        song: false
       },
       {
         story: "Knowing she could never be scolded by her mother, Omolabake was always up \
-        to one mischief or the other.She coveted other people’s properties and her mother went \
+        to one mischief or the other. She coveted other people’s properties and her mother went \
         to great lengths to acquire such properties for her. Aduke parted with ridiculous \
         amounts of money to acquire anything Omolabake wanted.",
         img: "assets/img/4.jpg",
-        no: ""
+        no: "",
+        song: false
       },
       {
         story: "The village elders called Aduke to warn her of the inherent danger \
@@ -84,37 +88,41 @@ export class ReadPage {
           she retorted rudely ‘I know what I went through before having this child, \
           and I’m not about to sacrifice her happiness’.",
         img: "assets/img/5.jpg",
-        no: ""
+        no: "",
+        song: false
       },
       {
-        story: "One day, she took Omolabake to the market to plait her hair. \
-          The hairdresser’s stall was opposite another stall where an old lady was \
+        story: "One day, she took Omolabake to the market to plait her \
+          hair. The hairdresser’s stall was opposite another stall where an old lady was \
           frying ‘akara’. Aduke bought several items to make sure Omolabake was \
-          comfortable and didn’t cry while plaiting",
+          comfortable and didn’t cry while plaiting her hair.",
         img: "assets/img/6.jpg",
-        no: ""
+        no: "",
+        song: false
       },
       {
         story: "The akara seller had unusually large eyeballs and this fascinated \
-          Omolabake who kept staring at her.After a while, she \
+          Omolabake who kept staring at her. After a while, she \
           pointed at the stall to indicate to her mother that she wanted \
-          something.Aduke quickly dashed to the stall to buy some \
+          something. Aduke quickly dashed to the stall to buy some \
           akara for her.",
         img: "assets/img/7.jpg",
-        no: ""
+        no: "",
+        song: false
       },
       {
         story: "Omolabake rejected the akara and kept pointing at the stall. Aduke paid for all \
           the akara available in the stall and even bought every item on sale in \
-          neighboring stalls to pacify Aduke.On learning that Omolabake wanted Iya \
+          neighboring stalls to pacify Aduke. On learning that Omolabake wanted Iya \
           Alakara’s eyes, Aduke bought a female goat and plucked its eyes for her \
           daughter to play with. Seeing that her mother was yet to buy the object that \
           caught her interest, she started crying and singing thus:",
         img: "assets/img/8.jpg",
-        no: ""
+        no: "",
+        song: false
       },
       {
-        story: "'“Iya ma ra o (twice) \
+        story: "'Iya ma ra o (twice) \
           Chorus: Ra fun mi \
           Ki se oju ewure \
           Chorus: Ra fun mi \
@@ -124,24 +132,38 @@ export class ReadPage {
           Iya ma ra o \
           Chorus: Ra fun mi'",
         img: "assets/img/9.jpg",
-        no: ""
+        no: "",
+        song: true
       },
       {
         story: "Despite Aduke’s tempting offers of gifts, the Iya alakara refused to part with her \
-          eyes in order to please Omolabake,. After a while, Omolabake started crying and \
+          eyes in order to please Omolabake. After a while, Omolabake started crying and \
           sinking into the ground until her whole body was buried in the ground and the \
           villagers, who were trying to prevent her from sinking, only have the tufts of hair \
-          pulled from her head to show for their efforts. That was how Aduke lost the child that she in-patiently got from the gods. \
+          pulled from her head to show for their efforts.",
+        img: "assets/img/10.jpg",
+        no: "",
+        song: false
+      },
+      {
+        story: "That was how Aduke lost the child that she in-patiently got from the gods. \
           Till this day, she only sits and stares at the hair that once belonged to her \
           daughter.",
         img: "assets/img/10.jpg",
-        no: ""
+        no: "",
+        song: false
       }
     ]
   }
+  ionViewDidEnter() {
+    this.slides.freeMode = true
+    this.slides.startAutoplay()
+    this.slides.autoplayDisableOnInteraction = false
+    // alert('fff')
+  }
 
   ionViewDidLeave() {
-    this.nativeAudio.stop('music');      
+    this.nativeAudio.stop('9');      
     if (this.voice) {
       this.voice = false;
       this.nativeAudio.stop(this.voiceNo);
@@ -149,7 +171,7 @@ export class ReadPage {
     }
     if (this.music) {
       this.music = false;
-      this.nativeAudio.stop('music');      
+      this.nativeAudio.stop('9');      
     }
   }
 
@@ -215,7 +237,7 @@ export class ReadPage {
 
   playSong() {
     if (!this.music) {
-      this.nativeAudio.loop('music').then(onSuccess => {
+      this.nativeAudio.loop('9').then(onSuccess => {
         this.music = true;
         let toast = this.toastCtrl.create({
           message: "Story Music audio now playing",
@@ -233,7 +255,7 @@ export class ReadPage {
         toast.present();
       });      
     } else {
-      this.nativeAudio.stop('music').then(onSuccess => {
+      this.nativeAudio.stop('9').then(onSuccess => {
         this.music = false;
         let toast = this.toastCtrl.create({
           message: "Story Music audio has been stopped",
