@@ -27,6 +27,12 @@ plugins/
 plugins/android.json
 plugins/ios.json
 www/
+apksigner.bat
+firebase.json
+my-release-key.jks
+Story-Book.apk
+zipalign.exe
+.firebaserc
 $RECYCLE.BIN/
 
 .DS_Store
